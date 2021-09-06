@@ -3,7 +3,7 @@ name: Deploy
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   deploy:
@@ -29,15 +29,8 @@ jobs:
           run: ls
         - name: Go Deps
           run: |
-            go get github.com/bmizerany/pat;
-            go get github.com/asaskevich/govalidator;
-            go get github.com/Psh777/gen_id;
-            go get github.com/lib/pq;
             go get github.com/go-telegram-bot-api/telegram-bot-api;
-            go get github.com/go-redis/redis;
-            go get github.com/jmoiron/sqlx;
-            go get gopkg.in/gomail.v2;
-            go get github.com/google/uuid;
+            go get github.com/gin-gonic/gin;
         - name: Build
           run: go build main.go
         - name: Deploy to Server
@@ -45,7 +38,7 @@ jobs:
           with:
             host: ${{ secrets.HOST }} #95.183.55.254
             port: ${{ secrets.PORT }} #22
-            username: ${{ secrets.USERNAME }} #psh
+            username: ${{ secrets.USER }} #psh
             key: ${{ secrets.KEY }}
             source: "main,static"
             target: "/var/www/royal/backend"
@@ -62,13 +55,13 @@ jobs:
           cat >>~/.ssh/config <<END
           Host staging
             HostName ${{ secrets.HOST }}
-            User ${{ secrets.USERNAME }}
+            User ${{ secrets.USER }}
             IdentityFile ~/.ssh/staging.key
             StrictHostKeyChecking no
           END
 
       - name: Stop the server
-        run: ssh staging 'sudo systemctl stop bukva-backend'
+        run: ssh staging 'sudo systemctl stop royal-backend'
 
       - name: Start the server
-        run: ssh staging 'sudo systemctl start bukva-backend'
+        run: ssh staging 'sudo systemctl start royal-backend'
