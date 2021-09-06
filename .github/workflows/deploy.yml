@@ -44,7 +44,7 @@ jobs:
             target: "/var/www/royal/backend"
   restart:
     needs: deploy
-    name: "Restart Services"
+    name: "Restart Services!"
     runs-on: ubuntu-latest
     steps:
       - name: Configure SSH
