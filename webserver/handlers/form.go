@@ -3,7 +3,7 @@ package handlers
 import "../../class/form"
 import "github.com/gin-gonic/gin"
 import "../../types"
-import "../answer"
+import "github.com/Psh777/gin_handler_answer"
 
 func FormHandler(w *gin.Context) {
 	i := types.Form{}

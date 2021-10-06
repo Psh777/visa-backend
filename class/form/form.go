@@ -3,8 +3,8 @@ package form
 import (
 	"../../modules/telegram"
 	"../../types"
-	"../../webserver/answer"
 	"fmt"
+	answer "github.com/Psh777/gin_handler_answer"
 	"github.com/gin-gonic/gin"
 )
 

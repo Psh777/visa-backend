@@ -2,7 +2,7 @@ package handlers
 
 import (
 	"../../singleton"
-	"../../webserver/answer"
+	"github.com/Psh777/gin_handler_answer"
 	"github.com/gin-gonic/gin"
 	"time"
 )
@@ -12,9 +12,9 @@ func IndexHandler(w *gin.Context) {
 	uptime := singleton.GetUptime()
 	v, n := singleton.GetData()
 	answer.HandlerInterface(w, Out{
-		Uptime: time.Now().Unix() - uptime,
-		Now: time.Now(),
-		NowUTC: time.Now().UTC(),
+		Uptime:  time.Now().Unix() - uptime,
+		Now:     time.Now(),
+		NowUTC:  time.Now().UTC(),
 		Version: v,
 		Node:    n,
 	})
