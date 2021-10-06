@@ -1,9 +1,9 @@
 package webserver
 
 import (
-	"../modules/config"
-	"./handlers"
 	"fmt"
+	"github.com/Psh777/visa-backend/modules/config"
+	"github.com/Psh777/visa-backend/webserver/handlers"
 	"github.com/gin-gonic/gin"
 )
 

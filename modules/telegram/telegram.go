@@ -1,8 +1,8 @@
 package telegram
 
 import (
-	"../config"
 	"fmt"
+	"github.com/Psh777/visa-backend/modules/config"
 	"github.com/go-telegram-bot-api/telegram-bot-api"
 	"log"
 	"strings"
@@ -12,7 +12,6 @@ import (
 var bot *tgbotapi.BotAPI
 
 func Init(myConfig config.Env) {
-
 
 	for {
 
@@ -51,10 +50,11 @@ func Init(myConfig config.Env) {
 
 		switch strings.ToLower(update.Message.Text) {
 
-		case "get id": {
-			msg := tgbotapi.NewMessage(update.Message.Chat.ID, fmt.Sprint(update.Message.Chat.ID))
-			_, _ = bot.Send(msg)
-		}
+		case "get id":
+			{
+				msg := tgbotapi.NewMessage(update.Message.Chat.ID, fmt.Sprint(update.Message.Chat.ID))
+				_, _ = bot.Send(msg)
+			}
 
 		case "hi":
 			msg := tgbotapi.NewMessage(update.Message.Chat.ID, "Hello")

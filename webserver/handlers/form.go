@@ -1,8 +1,8 @@
 package handlers
 
-import "../../class/form"
+import "github.com/Psh777/visa-backend/class/form"
 import "github.com/gin-gonic/gin"
-import "../../types"
+import "github.com/Psh777/visa-backend/types"
 import "github.com/Psh777/gin_handler_answer"
 
 func FormHandler(w *gin.Context) {

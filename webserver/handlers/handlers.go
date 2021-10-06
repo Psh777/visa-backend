@@ -1,8 +1,8 @@
 package handlers
 
 import (
-	"../../singleton"
 	"github.com/Psh777/gin_handler_answer"
+	"github.com/Psh777/visa-backend/singleton"
 	"github.com/gin-gonic/gin"
 	"time"
 )

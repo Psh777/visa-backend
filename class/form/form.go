@@ -1,10 +1,10 @@
 package form
 
 import (
-	"../../modules/telegram"
-	"../../types"
 	"fmt"
-	answer "github.com/Psh777/gin_handler_answer"
+	"github.com/Psh777/gin_handler_answer"
+	"github.com/Psh777/visa-backend/modules/telegram"
+	"github.com/Psh777/visa-backend/types"
 	"github.com/gin-gonic/gin"
 )
 

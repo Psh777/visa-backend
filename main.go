@@ -1,19 +1,19 @@
 package main
 
 import (
-	"./modules/config"
-	"./modules/telegram"
-	"./singleton"
-	"./webserver"
 	"fmt"
 	"github.com/Psh777/gen_id"
+	"github.com/Psh777/visa-backend/modules/config"
+	"github.com/Psh777/visa-backend/modules/telegram"
+	"github.com/Psh777/visa-backend/singleton"
+	"github.com/Psh777/visa-backend/webserver"
 	"os"
 	"time"
 )
 
 func main() {
 	_, _ = fmt.Fprintln(os.Stdout, "START")
-	var version = "1.0.4"
+	var version = "1.0.5"
 	var node, _ = gen_id.New(6)
 
 	singleton.SetData(version, node)
