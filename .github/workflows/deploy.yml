@@ -21,7 +21,7 @@ jobs:
         - name: Golang Ext
           run: |
             go version;
-            export GO111MODULE=off;
+            export GO111MODULE=on;
             $GOPATH;
             env | grep -E "GO|PATH";
             ls;
@@ -30,10 +30,6 @@ jobs:
         - name: Go Deps
           run: |
             go get github.com/Psh777/visa-backend
-            go get github.com/go-telegram-bot-api/telegram-bot-api;
-            go get github.com/gin-gonic/gin;
-            go get github.com/Psh777/gen_id;
-            go get github.com/Psh777/gin_handler_answer
         - name: Build
           run: go build main.go
         - name: Deploy to Server

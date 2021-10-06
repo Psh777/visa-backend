@@ -13,7 +13,7 @@ import (
 
 func main() {
 	_, _ = fmt.Fprintln(os.Stdout, "START")
-	var version = "1.0.5"
+	var version = "1.0.6"
 	var node, _ = gen_id.New(6)
 
 	singleton.SetData(version, node)
